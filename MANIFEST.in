@@ -1,0 +1,2 @@
+include src/database/schema/schema.sql
+global-exclude *.pyc
