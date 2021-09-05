@@ -12,8 +12,6 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, 'src.sqlite'),
     )
     app.config['WTF_CSRF_ENABLED'] = False
-    csrf = CSRFProtect()
-    csrf.init_app(app)
 
     if test_config is None:
         # Load the instance config, if it exists, when not testing
@@ -29,7 +27,6 @@ def create_app(test_config=None):
         pass
 
     @app.route('/health-check')
-    @csrf.exempt
     def health_check():
         return 'Server is running...'
 
