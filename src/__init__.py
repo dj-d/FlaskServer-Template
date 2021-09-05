@@ -9,8 +9,8 @@ def create_app(test_config=None):
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'src.sqlite'),
-        WTF_CSRF_ENABLED=False
     )
+    app.config['WTF_CSRF_ENABLED'] = False
 
     if test_config is None:
         # Load the instance config, if it exists, when not testing
