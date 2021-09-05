@@ -2,3 +2,8 @@
 
 FlaskServer-Template
 Python Flask Web Server Template
+
+```
+CONTAINER_NAME=FlaskServer-Template
+PORT=5000
+```
