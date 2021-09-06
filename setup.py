@@ -9,6 +9,7 @@ setup(
     install_requires=[
         'flask',
         'Flask-WTF',
-        'python-dotenv'
+        'python-dotenv',
+        'waitress'
     ]
 )
