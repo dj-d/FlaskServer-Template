@@ -1,8 +1,9 @@
 FROM python:3-alpine
 
-COPY app /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE 5000
+ADD setup.py .
+RUN pip install -e .
 
-CMD ["python", "app.py"]
+COPY . /app
+WORKDIR /app
+
+CMD ["waitress-serve", "--call", "src:create_app"]
