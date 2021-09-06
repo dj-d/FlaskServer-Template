@@ -1,3 +1,15 @@
 .github
+sonar-project.properties
+
+Dockerfile
+Dockerfile.development
+docker-compose.yaml
+
+venv/
+
+tests/
+setup.cfg
+MANIFEST.in
+
 LICENSE
 README.md
