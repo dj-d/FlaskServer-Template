@@ -11,6 +11,7 @@ setup(
         'Flask-WTF',
         'python-dotenv',
         'pytest',
+        'coverage',
         'waitress'
     ]
 )

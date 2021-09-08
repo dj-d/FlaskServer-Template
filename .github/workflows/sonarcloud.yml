@@ -27,7 +27,10 @@ jobs:
 
       # Test
       - name: Test with pytest
-        run : pytest
+        run : |
+          pytest
+          coverage run -m pytest
+          coverage xml
 
       # Sonar Cloud
       - name: Analyze with SonarCloud
