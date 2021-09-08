@@ -28,7 +28,6 @@ jobs:
       # Test
       - name: Test with pytest
         run : |
-          pytest
           coverage run -m pytest
           coverage xml
 
