@@ -1,5 +1,6 @@
-![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-orange.svg)](https://sonarcloud.io/dashboard?id=dj-d_FlaskServer-Template)
 
@@ -9,6 +10,7 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=dj-d_FlaskServer-Template&metric=code_smells)](https://sonarcloud.io/dashboard?id=dj-d_FlaskServer-Template)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=dj-d_FlaskServer-Template&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=dj-d_FlaskServer-Template)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=dj-d_FlaskServer-Template&metric=coverage)](https://sonarcloud.io/dashboard?id=dj-d_FlaskServer-Template)
+
 # FlaskServer-Template
 
 Simple template to initialize a backend in Python using the Flask microframework
