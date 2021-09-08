@@ -10,6 +10,7 @@ setup(
         'flask',
         'Flask-WTF',
         'python-dotenv',
+        'pytest',
         'waitress'
     ]
 )
