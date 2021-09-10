@@ -1,20 +1,17 @@
-# This is a basic workflow to help you get started with Actions
+name: Analyze
 
-name: SonarCloud
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on: push
     
 jobs:
   build:
-    runs-on:
-      - ubuntu-latest
+    name: Test & Analyze
+    runs-on: ubuntu-latest
     steps:
-      # Checkout repo
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
 
-      # Dependencies
       - name: Set up Python 3.9
         uses: actions/setup-python@v1
         with:
@@ -25,14 +22,36 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
 
-      # Test
-      - name: Test with pytest
+      - name: Test with Coverage
         run : |
-          coverage run -m pytest
-          coverage xml
+          coverage run run setup.py test
 
-      # Sonar Cloud
-      - name: Analyze with SonarCloud
+      - name: Generate Coverage Reports
+        run: |
+          coverage report
+          coverage xml
+      - name: Upload reports
+        uses: action/upload-artifact@v2
+        with:
+          name: reports
+          path: |
+            coverage.xml
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkoud
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Download reports
+        uses: action/download-artifact@v2
+        with:
+          name: reports
+
+      - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
