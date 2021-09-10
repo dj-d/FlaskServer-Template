@@ -31,7 +31,7 @@ jobs:
           coverage report
           coverage xml
       - name: Upload reports
-        uses: action/upload-artifact@v2
+        uses: actions/upload-artifact@v2
         with:
           name: reports
           path: |
@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download reports
-        uses: action/download-artifact@v2
+        uses: actions/download-artifact@v2
         with:
           name: reports
 
