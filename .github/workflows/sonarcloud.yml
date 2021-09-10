@@ -24,7 +24,7 @@ jobs:
 
       - name: Test with Coverage
         run : |
-          coverage run run setup.py test
+          coverage run setup.py test
 
       - name: Generate Coverage Reports
         run: |
